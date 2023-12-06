@@ -1,0 +1,85 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Vista
+build_property.RootNamespace = Vista
+build_property.ProjectDir = C:\Users\pribe\Desktop\TFI-ADMINISTRACION\Vista\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\pribe\Desktop\TFI-ADMINISTRACION\Vista
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Administrativo/CrearEmpleado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpdm9cQ3JlYXJFbXBsZWFkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Administrativo/EditarEmpleado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpdm9cRWRpdGFyRW1wbGVhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Administrativo/GestionarEmpleados.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpdm9cR2VzdGlvbmFyRW1wbGVhZG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Administrativo/GestionarProyecto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpdm9cR2VzdGlvbmFyUHJveWVjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/LiderDeProyecto/AsignarTareas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlkZXJEZVByb3llY3RvXEFzaWduYXJUYXJlYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/LiderDeProyecto/Calendario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlkZXJEZVByb3llY3RvXENhbGVuZGFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/LiderDeProyecto/TimeLine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlkZXJEZVByb3llY3RvXFRpbWVMaW5lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Login/AccesoDenegado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cQWNjZXNvRGVuZWdhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Login/CerrarSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cQ2VycmFyU2VzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Login/IniciarSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5pY2lhclNlc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Shared/_LoginStatusPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblN0YXR1c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pribe/Desktop/TFI-ADMINISTRACION/Vista/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vzpp1hx2h1

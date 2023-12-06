@@ -1,0 +1,45 @@
+body {
+}
+
+.ocultar {
+    display: none;
+}
+
+.btnImprimir {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 5px #888888;
+    background-color: cadetblue;
+}
+
+@media print {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .btnImprimir, .containerNavBar, #tituloPantalla, .containerTitulo, .btnCerrarVentana {
+        display: none;
+    }
+
+    #tituloImprimir, #containerInfoProyecto, #containerInfoCliente {
+        display: block;
+    }
+}
+.containerTitulo {
+    margin-top: 5px;
+}
+
+.btnCerrarVentana {
+    background-color: red;
+    color: white;
+    border:none; 
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #888888;
+    font-size: 15px;
+}

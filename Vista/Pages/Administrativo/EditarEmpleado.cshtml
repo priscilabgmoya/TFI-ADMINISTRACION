@@ -1,0 +1,139 @@
+﻿@page
+@model Vista.Pages.Administrativo.EditarEmpleadoModel
+@{
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/gestionarEmpleados.css" />
+<div class="row containerTitulo">
+    <div class="col-10 ">
+        <h2 class="text-center"><i class="fa fa-edit"></i> Editar empleado</h2>
+    </div>
+    <div class="col-2 ">
+        <a class="btn btnCerrarVentana" href="/Administrativo/GestionarEmpleados"><i class="fas fa-times"></i></a>
+    </div>
+</div>
+<div class="row ">
+    <form asp-page-handler="buscar" class="containerFiltro">
+        <div class="col-4 mt-3">
+            <input type="text" asp-for="Legajo" placeholder="Buscar empleado por legajo" class="inputFiltroEmpleado">
+            <button class="btnFiltro" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+</div>
+<form asp-page-handler="update" class="mt-3">
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Legajo (no editable):</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input readonly intert asp-for="Empledo.Legajo" type="number" class="form-control w-50" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">CUIT:</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input asp-for="Empledo.CUIT" type="number" class="form-control w-50" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Nombre:</label>
+        </div>
+        <div class="col-1 col-md-4">
+            <input asp-for="Empledo.Nombre" type="text" class="form-control" />
+        </div>
+        <div class="col-12 col-md-1">
+            <label class="form-label">Apellido:</label>
+        </div>
+        <div class="col-12 col-md-4">
+            <input asp-for="Empledo.Apellido" type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Fecha de nacimiento:</label>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="date" asp-for="Empledo.FechaDeNacimiento" class="form-control w-50" />
+        </div>
+    </div>
+
+    <hr />
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Nombre de usuario:</label>
+        </div>
+        <div class="col-1 col-md-4">
+            <input inert readonly asp-for="Empledo.Usuario.NombreDeUsuario" type="text" class="form-control" />
+        </div>
+        <div class="col-12 col-md-1">
+            <label class="form-label">Contraseña:</label>
+        </div>
+        <div class="col-12 col-md-4">
+            <input asp-for="Empledo.Usuario.Contrasena" type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Área actual:</label>
+        </div>
+        <div class="col-1 col-md-4">
+            <input readonly inert asp-for="Empledo.Area.NombreArea" type="text" class="form-control" />
+        </div>
+        <div class="col-12 col-md-1">
+            <label class="form-label">Área nueva:</label>
+        </div>
+        <div class="col-12 col-md-4">
+            <select asp-for="IndiceAreaSeleccionada" class="form-control">
+                @for (int i = 0; i < Model.AreasDeTrabajo.Count(); i++)
+                {
+                    <option value="@i">@Model.AreasDeTrabajo[i].NombreArea</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Puesto de trabajo:</label>
+        </div>
+        <div class="col-12 col-md-3">
+            <input asp-for="Empledo.Puesto.Descripcion" type="text" class="form-control" />
+        </div>
+        <div class="col-12 col-md-2">
+            <label class="form-label">Seniority:</label>
+        </div>
+        <div class="col-12 col-md-3">
+            <input asp-for="Empledo.Puesto.Seniority" type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-2">
+            <label class="form-label">Sueldo bruto:</label>
+        </div>
+        <div class="col-12 col-md-3">
+            <input asp-for="Empledo.Sueldo.Bruto" type="number" class="form-control" />
+        </div>
+        <div class="col-12 col-md-2">
+            <label class="form-label">Descuento jubilación:</label>
+        </div>
+        <div class="col-12 col-md-1">
+            <input readonly placeholder="11 %" class="form-control text-center" />
+        </div>
+        <div class="col-12 col-md-2">
+            <label class="form-label">Descuento obra social:</label>
+        </div>
+        <div class="col-12 col-md-1">
+            <input readonly placeholder="3 %" class="form-control text-center" />
+        </div>
+    </div>
+    <div class="row mt-2 text-center">
+        <div class="col-12">
+            <button type="button" class="btnLimpiar me-4"> <i class="fas fa-broom"></i> Limpiar</button>
+            <button type="submit" class="btnConfirmar">Confirmar</button>
+        </div>
+    </div>
+</form>
+
+

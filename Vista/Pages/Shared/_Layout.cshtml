@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Administración de recursos</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <header class="p-3 containerNavBar">
+        <div class="mr-2 ">
+            <div class="containerImg ">
+                <img src="~/assets/logo-1.png" class="logoImg" />
+            </div>
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index"> <i class="fas fa-home iconNavBar"></i> <br /> <span class="text-nav">Inicio</span></a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Administrativo/gestionarEmpleados"> <i class="fas fa-users iconNavBar"></i>  <br /> <span class="text-nav">Gestionar Empleados</span></a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Administrativo/GestionarProyecto"> <i class="fas fa-folder iconNavBar"></i>  <br /><span class="text-nav">Asignar Proyectos</span> </a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/LiderDeProyecto/AsignarTareas"> <i class="fas fa-tasks iconNavBar"></i>  <br /><span class="text-nav">Asignar Tareas</span> </a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/LiderDeProyecto/TimeLine"> <i class="fas fa-chart-pie iconNavBar"></i> <br /> <span class="text-nav">Generar Reportes</span> </a>
+            </li>
+        </ul>
+
+        <div class="mr-2 ">
+
+            <partial name="_LoginStatusPartial" />
+        </div>
+    </header>
+    <div class="container containerPpal">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

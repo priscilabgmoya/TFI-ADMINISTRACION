@@ -1,0 +1,174 @@
+﻿@page
+@using Dominio.Enum;
+@model Vista.Pages.LiderDeProyecto.AsignarTareasModel
+@{
+    var estados = Enum.GetValues(typeof(EstadoTarea)).Cast<EstadoTarea>().ToList();
+    var prioridades = Enum.GetValues(typeof(PrioridadTarea)).Cast<PrioridadTarea>().ToList();
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/asignarTarea.css" />
+
+@if(Model.Proyecto != null && Model.EmpleadosDisponibles != null){
+    <div class="row text-center mt-2">
+        <h1 class="justify-content-center">@Model.Proyecto.Descripcion</h1>
+        @*TODO: iconos*@
+    </div>
+    <div class="container">
+        <div class="row mt-2 contenerdorBtns">
+            <div class="col-2">
+                <h3>Equipo: @Model.Proyecto.Equipo.EquipoId</h3>
+            </div>
+            <div class="col-2 text-center">
+                <h3>|</h3>
+            </div>
+            <div class="col-3">
+                <h3>Cliente: @Model.Proyecto.Cliente.Empresa</h3>
+            </div>
+        </div>
+        <div class="row mt-3 contenerdorBtns">
+            <div class="col-3 me-2">
+                <a href="/LiderDeProyecto/AsignarTareas"  class="btn btnOpciones">Tareas</a>
+            </div>
+            <div class="col-3 me-2">
+                <a href="/LiderDeProyecto/TimeLine" class="btn btnOpciones">Timeline</a>
+            </div>
+            <div class="col-3 me-2">
+                <a href="/LiderDeProyecto/Calendario" class="btn btnOpciones">Calendario</a>
+            </div>
+        </div>
+        <div class="col-12 mt-3 justify-content-center">
+            <div class="col-4 mt-2 mb-2 d-flex">
+            <label>Tipo de Tareas: </label>
+                <select class="form-select" id="selectTipoTarea" onchange="filtrarTabla()">
+                    <option>Todas</option>
+                    @foreach (var estado in estados)
+                    {
+                        <option>@estado</option>
+                    }
+                </select>
+            </div>
+            <table class="table text-center" id="tablaTareas">
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Fecha límite</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Prioridad</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaTareas" style="overflow-y:auto; ">
+                    @foreach(var tarea in Model.Proyecto.Tareas.OrderBy(x => x.TareaId))
+                    {
+                        <tr onclick="obtenereTareaSeleccionada(this)">
+                            <td>@tarea.TareaId</td>
+                            <td>@tarea.Descripcion</td>
+                            <td>xxxx</td>
+                            <td>@tarea.FechaFinalEstimada.Date.ToString().Split(' ')[0]</td>
+                            @if (tarea.Estado.Equals(EstadoTarea.Terminada))
+                            {
+                                <td style="background-color:dimgrey;">-</td>
+                            }
+                            else if (DateTime.Now > tarea.FechaFinalEstimada)
+                            {
+                                <td style="background-color:red;">Retrasada</td>
+                            }
+                            else
+                            {
+                                <td style="background-color:lightgreen;">A tiempo</td>
+                            }
+                            <td>@tarea.Prioridad</td>
+                            <td>@tarea.Estado</td>
+                            <td class="d-flex justify-content-center">
+                                <form asp-page-handler="delete">
+                                    <input readonly hidden class="tareaElegida" asp-for="@Model.TareaIDSeleccionada" id="tareaSeleccionada" type="number" />
+                                    <button class="btnEliminarEmpleado me-2" id="btnBorrar" onclick="return confirm('¿Está seguro que desea eliminar?')">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                                <form asp-page-handler="update">
+                                    <input readonly hidden class="tareaElegida" asp-for="@Model.TareaIDSeleccionada" id="tareaSeleccionada" type="number" />
+                                    <button class="me-2 btnEstado">
+                                        <i class="fas fa-eject"></i>
+                                    </button>
+                                </form>
+                                <form asp-page-handler="state">
+                                    <input readonly hidden class="tareaElegida" asp-for="@Model.TareaIDSeleccionada" id="tareaSeleccionada" type="number" />
+                                    <button class=" btnPrioridad">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr />
+    <h2 class="">Crear Nueva Tarea</h2>
+    <form asp-page-handler="post" class="mt-5">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-2">Descripción:</label>
+                <input asp-for="Tarea.Descripcion">
+            </div>
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-2">Estado:</label>
+                <select class="form-select" asp-for="Tarea.Estado" class="form-control">
+                    @foreach(var estado in estados)
+                    {
+                        <option>@estado</option>                        
+                    }
+                </select>
+            </div>
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-4">Empleado:</label>
+                <select class="form-select" asp-for="EmpleadoLegajo" class="form-control">
+                    @foreach (var emp in Model.EmpleadosDisponibles)
+                    {
+                        <option value="@emp.Legajo">@emp.Nombre @emp.Apellido</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-center">
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-2">Fecha finalización:</label>
+                <input type="date" class="form-control w-50" asp-for="Tarea.FechaFinalEstimada" oninput="validarFecha()" />
+            </div>
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-4">Tiempo estimado (hs):</label>
+                <input type="number" asp-for="Tarea.HorasDedicacionEstimadas" class="w-25" min="0" step="1" value="0">
+            </div>
+            <div class="col-3 ms-1 me-1 d-flex align-items-center">
+                <label class="me-2">Prioridad:</label>
+                <select class="form-select" asp-for="Tarea.Prioridad" class="form-control">
+                    @foreach (var prioridad in prioridades)
+                    {
+                        <option>@prioridad</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col mt-4 mb-2 d-flex justify-content-center">
+            <button class="btnGuardarTarea mb-2" type="submit">
+                <i class="fa fa-save me-2"></i>
+                Guardar
+            </button>
+        </div>
+    </form>
+
+}
+else if (Model.Proyecto == null){
+    <h1 class="text-center bold text-danger">No posee ningún proyecto activo</h1>
+}
+else if (Model.EmpleadosDisponibles == null)
+{
+    <h1 class="text-center bold text-danger">No hay ningún empleado asociado al proyecto</h1>
+}
+
+<script src="~/js/site.js"></script>

@@ -1,0 +1,148 @@
+﻿@page
+@model Vista.Pages.LiderDeProyecto.GestionarProyectoModel
+@{
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/gestionarProyecto.css" />
+
+<div class="row">
+    <h1 class="title"> <i class="fas fa-users"></i> Asignación de Empleados a Equipo/Proyecto</h1>
+</div>
+
+<div class="row">
+    <div class="col-8 mt-3 mx-auto">
+        <h2> Empleados</h2>
+    </div>
+    <div class="col-4 mt-3 mx-auto">
+        <input type="text" id="myInputEmpleados" onkeyup="filtroDinamicoProyecto('myInputEmpleados', 'myTBodyEmpleados')" placeholder="Buscar empleado por legajo" class="inputFiltroEmpleado">
+        <button class="btnFiltro " inert><i class="fa fa-search"></i></button>
+    </div>
+
+    <div class="col-12 mt-3 mx-auto">
+        @if(Model.Empleados.Count > 0)
+        {
+            <table class="table table-bordered text-center" id="tablaEmpleados">
+                <thead>
+                    <tr>
+                        <th scope="col">Legajo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Puesto</th>
+                        <th scope="col">Área</th>
+                        <th scope="col">Lider</th>
+                    </tr>
+                </thead>
+                <tbody id="myTBodyEmpleados">
+                    @foreach (var emp in Model.Empleados)
+                    {
+                        <tr onclick="obtenereEmpleadoSeleccionado(this)">
+                            <td>@emp.Legajo</td>
+                            <td>@emp.Nombre</td>
+                            <td>@emp.Apellido</td>
+                            <td>@emp.Puesto.Descripcion</td>
+                            <td>@emp.Area.NombreArea</td>
+                            @if (@emp.LiderDeProyecto)
+                            {
+                                <td><input type="checkbox" inert readonly checked/></td>
+                            }
+                            else
+                            {
+                                <td><input type="checkbox" inert readonly/></td>
+                            }
+                            @*                            <td colspan="4">
+                                <form asp-page-handler="delete">
+                                    <input hidden readonly asp-for="LegajoSeleccionado" id="legajoSeleccionado" type="number" />
+                                    <input type="checkbox" id="miCheckbox" name="miCheckbox" onchange="checkboxChanged()" />
+                                    <label for="miCheckbox">Lider</label>
+                                </form>
+                            </td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4 class="text-center bold">No hay empleados disponibles para asignar</h4>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8 mt-3">
+        <h2> Equipos activos</h2>
+    </div>
+    <div class="col-8 mt-2">
+        <form asp-page-handler="CambiarEquipo" class="mt-5">
+            <label> Número de equipo: </label>
+@*                @for (int i = 0; i < Model.AreasDeTrabajo.Count(); i++)
+                {
+                    <option value="@i">@Model.AreasDeTrabajo[i].NombreArea</option>
+                }*@
+            <select bu class="text-center" asp-for="NumeroDeEquipo">
+                @foreach (var eq in Model.Equipos)
+                {
+                    <option value="@eq.EquipoId">@eq.EquipoId</option>
+                }
+            </select>
+            <button type="submit" class="btnFiltroEquipo"><i class="fa fa-filter"></i></button>
+        </form>
+    </div>
+    <div class="col-12 mt-3 mx-auto">
+        <table class="table table-bordered text-center" id="tablaEquipos">
+            <thead>
+                <tr>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Puesto</th>
+                    <th scope="col">Área</th>
+                    <th scope="col">Lider</th>
+                </tr>
+            </thead>
+            <tbody id="myTBodytablaEquipos">
+                @foreach (var emp in Model.Equipo.Empleados)
+                {
+                    <tr>
+                        <td>@emp.Legajo</td>
+                        <td>@emp.Nombre</td>
+                        <td>@emp.Apellido</td>
+                        <td>@emp.Puesto.Descripcion</td>
+                        <td>@emp.Area.NombreArea</td>
+                        @if (@emp.LiderDeProyecto)
+                        {
+                            <td><input type="checkbox" inert readonly checked /></td>
+                        }
+                        else
+                        {
+                            <td><input type="checkbox" inert readonly /></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row containerBtns">
+    <div class="col-4">
+        <button class="btnLimpiar" onclick="limpiarView()"><i class="fas fa-broom"></i> Limpiar Seleccion</button>
+    </div>
+    <div class="col-4 ">
+        <form asp-page-handler="post">
+            <input hidden readonly asp-for="LegajoAgregar" id="legajoSeleccionado" />
+            <input hidden readonly asp-for="NumeroDeEquipo"/>
+            <button type="submit" class="btnAgregarEmpleado"><i class="fas fa-plus" onclick="return confirm('¿Está seguro?')">
+            </i> Agregar Empleado a Equipo</button>
+        </form>
+    </div>
+    <div class="col-4">
+        <form asp-page-handler="delete">
+            <input hidden readonly asp-for="LegajoBorrar" id="legajoBorrar" />
+            <button type="submit" class="btnQuitarEmpleado"><i class="fas fa-minus" onclick="return confirm('¿Está seguro?')"></i> Quitar Empleado del Equipo</button>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/gestionarProyecto.js"></script>

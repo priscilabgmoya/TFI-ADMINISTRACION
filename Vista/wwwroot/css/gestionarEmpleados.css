@@ -1,0 +1,103 @@
+﻿.tituloPpal {
+    padding-top: 32px !important;
+}
+.title {
+    text-align: center !important;
+}
+.inputFiltroEmpleado {
+    width: 80%; 
+    height: 40px; 
+    border-radius: 20px; 
+    padding: 10px;
+}
+.btnFiltro {
+    position: relative;
+    background-color: #0097b6 !important;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    right: 53px;
+    top: -3px; 
+}
+.containerFiltro{
+    display:flex; 
+    justify-content:end; 
+}
+.btnAgregarEmpleado, .btnConfirmar{
+    color: white;
+    background-color: green;
+}
+.btnModificarEmpleado{
+    background-color:yellow !important; 
+}
+.btnModificarEmpleado, .btnAgregarEmpleado {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 5px #888888;
+}
+tr td, th {
+    border: 10px black;
+}
+
+table {
+    background-color: white;
+}
+#legajoSeleccionado{
+    background-color:transparent; 
+    border:none;
+    width:40px; 
+    font-weight: 500; 
+}
+#legajoSeleccionado:focus{
+    border: none; 
+}
+.btnEliminarEmpleado {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #888888;
+}
+.tituloEliminarEmpleado {
+    font-weight: 500;
+}
+.containerTitulo{
+    margin-top: 5px; 
+}
+.btnCerrarVentana {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #888888;
+    font-size: 15px;
+}
+
+.btnLimpiar, .btnConfirmar {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    box-shadow: 1px 1px 5px #888888;
+    width: 15%; 
+}
+.title {
+    text-align: center !important;
+}
+.containerBtn {
+    display: flex;
+    justify-content: space-around;
+}
+.btnLimpiarEmpleado {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 5px #888888;
+    width: 60%;
+}
+.containerBtnsEmpleados {
+    display: flex;
+    justify-content: center;
+    margin-bottom:20px;
+}

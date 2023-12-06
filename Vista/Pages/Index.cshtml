@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Menú principal";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+<div class="text-center mt-5">
+    <h1 class="display-4">Menú de opciones</h1>
+</div>
+
+<div class="col-12 justify-content-center mt-4">
+    <a class="btn btn-success" href="/Administrativo/GestionarEmpleados" style="width:100%; font-size:2em;">
+        Gestionar empleados          <i class="fa fa-users"></i>
+    </a>
+</div>
+<div class="col-12 justify-content-center mt-4">
+    <a class="btn btn-success" href="/Administrativo/GestionarProyecto" style="width:100%; font-size:2em;">
+        Gestionar proyectos          <i class="fa fa-briefcase"></i>
+    </a>
+</div>
+<div class="col-12 justify-content-center mt-4">
+    <a class="btn btn-success" href="/LiderDeProyecto/AsignarTareas" style="width:100%; font-size:2em;">
+        Gestionar tareas          <i class="fa fa-clipboard"></i>
+    </a>
+</div>
+<div class="col-12 justify-content-center mt-4">
+    <a class="btn btn-success" href="/ImprimirReporte" style="width:100%; font-size:2em;">
+        Imprimir reporte          <i class="fa fa-paper"></i>
+    </a>
+</div>
+<script src="~/js/site.js" ></script>

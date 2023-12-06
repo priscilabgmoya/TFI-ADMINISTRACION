@@ -1,0 +1,23 @@
+﻿.form-group{
+    display:flex; 
+    justify-content:center; 
+}
+.btnInicioSesion {
+    background-color: green;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 3px 3px 8px #888888;
+}
+.containerImg img {
+    width: 150px;
+    height: 180px;
+    object-fit: contain;
+    background-color: #0097b6;
+    box-shadow: 1px 1px 5px #888888;
+    border-radius: 10px;
+}
+.containerLogin {
+    margin-top: 122px;
+}

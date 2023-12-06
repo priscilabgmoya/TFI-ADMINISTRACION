@@ -1,0 +1,57 @@
+﻿body {
+}
+tr td, th {
+    border: solid 2px black;
+}
+
+table {
+    background-color: white;
+}
+.btnOpciones {
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 1px 1px 5px #888888;
+}
+.contenerdorBtns{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.btnGuardarTarea {
+    background-color: green;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 1px 1px 5px #888888;
+}
+.btnEliminarEmpleado, .btnEstado ,.btnPrioridad{
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #888888;
+}
+.btnEliminarEmpleado {
+    background-color: red;
+}
+.btnEstado {
+    background-color: royalblue;
+}
+.btnPrioridad {
+    background-color:yellow;
+}
+.containerTitulo {
+    margin-top: 5px;
+}
+
+.btnCerrarVentana {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #888888;
+    font-size: 15px;
+}

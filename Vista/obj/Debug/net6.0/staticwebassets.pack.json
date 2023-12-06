@@ -1,0 +1,305 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Vista.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Vista.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\assets\\acceso_denegado.png",
+      "PackagePath": "staticwebassets\\assets\\acceso_denegado.png"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\assets\\logo-1.png",
+      "PackagePath": "staticwebassets\\assets\\logo-1.png"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\asignarTarea.css",
+      "PackagePath": "staticwebassets\\css\\asignarTarea.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\gestionarEmpleados.css",
+      "PackagePath": "staticwebassets\\css\\gestionarEmpleados.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\gestionarProyecto.css",
+      "PackagePath": "staticwebassets\\css\\gestionarProyecto.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\iniciarSesion.css",
+      "PackagePath": "staticwebassets\\css\\iniciarSesion.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\css\\timeline.css",
+      "PackagePath": "staticwebassets\\css\\timeline.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\img\\hand-symbol-stop-sign-k2-0610.png",
+      "PackagePath": "staticwebassets\\img\\hand-symbol-stop-sign-k2-0610.png"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\js\\gestionarProyecto.js",
+      "PackagePath": "staticwebassets\\js\\gestionarProyecto.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\js\\timeLine.js",
+      "PackagePath": "staticwebassets\\js\\timeLine.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pribe\\Desktop\\TFI-ADMINISTRACION\\Vista\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Vista.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Vista.props",
+      "PackagePath": "build\\Vista.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Vista.props",
+      "PackagePath": "buildMultiTargeting\\Vista.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Vista.props",
+      "PackagePath": "buildTransitive\\Vista.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,72 @@
+﻿@page
+@model Vista.Pages.Administrativo.GestionarEmpleadosModel
+@{
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/gestionarEmpleados.css" />
+
+<div class="row">
+    <h1 class="title"> <i class="fas fa-users"></i> Gestionar Empleados </h1>
+</div>
+<div class="col-12">
+    <div class="row d-flex justify-content-end">
+    <div class="col-4 mt-3">
+        <input type="text" id="myInput" onkeyup="filtroDinamico()" placeholder="Buscar empleado por apellido" class="inputFiltroEmpleado">
+        <button class="btnFiltro" inert><i class="fa fa-search"></i></button>
+    </div>  
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3">
+            <a class="btn btnAgregarEmpleado" href="/Administrativo/CrearEmpleado"><i class="fa fa-plus"></i>  Agregar nuevo empleado</a>
+        </div>
+        <div class="col-3 ms-5">
+            <a class="btn btnModificarEmpleado" href="/Administrativo/EditarEmpleado"><i class="fa fa-edit"></i>  Editar un empleado</a>
+        </div>
+    </div>
+
+
+    <div class="col-12 mt-3 mx-auto">
+        <table class="table table-bordered text-center" id="tablaEmpleados">
+            <thead>
+                <tr>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Remuneración</th>
+                    <th scope="col">Puesto</th>
+                </tr>
+            </thead>
+
+            <tbody id="myTBody">
+                @foreach (var emp in Model.Empleados)
+                {
+                    <tr onclick="obtenereEmpleadoSeleccionado(this)">
+                        <td>@emp.Legajo</td>
+                        <td>@emp.Nombre</td>
+                        <td>@emp.Apellido</td>
+                        <td>$@emp.Sueldo.Bruto</td>
+                        <td>@emp.Puesto.Descripcion</td>
+                    </tr>                    
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row containerBtnsEmpleados">
+        <div class="col-4 d-flex justify-content-center mb-3">
+            <button class="btnLimpiarEmpleado" onclick="limpiarViewEmpleado()"><i class="fas fa-broom"></i> Limpiar Seleccion</button>
+        </div>
+        <div class="col-4  d-flex justify-content-center mb-3">
+            <form asp-page-handler="delete">
+                <label>Empleado a eliminar: </label>
+                <input readonly asp-for="@Model.LegajoSeleccionado" id="legajoSeleccionado" type="number" />
+                <button class="btnEliminarEmpleado " id="btnBorrar" onclick="return confirm('¿Está seguro que desea eliminar?')">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/site.js"></script>

@@ -1,0 +1,175 @@
+﻿@page
+@using Dominio.Enum;
+@model Vista.Pages.LiderDeProyecto.TimeLineModel
+@{
+}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/timeline.css" />
+
+
+@if(Model.Proyecto != null)
+{
+    @if(Model.Proyecto.Tareas.Count > 0)
+    {
+
+        <div class="row containerTitulo">
+            <div class="col-10 ">
+                <h1 id="tituloPantalla text-center">Diagrama de Gantt de las tareas </h1>
+            </div>
+            <div class="col-2 ">
+                <a class="btn btnCerrarVentana" href="/LiderDeProyecto/AsignarTareas"><i class="fas fa-times"></i></a>
+            </div>
+        </div>
+        <div class="mt-3 mb-3 col-12 text-center ocultar">
+            <h1 id="tituloImprimir" >Diagrama de Gantt de las tareas del Proyecto </h1>
+        </div>
+        <div id="containerInfoProyecto" class="col-12 ocultar">
+            <h4>Información del Proyecto: </h4>
+            <ul>
+                <li> Descripción: @Model.Proyecto.Descripcion</li>
+                <li> Costo: @Model.Proyecto.Costo</li>
+                <li> Fecha Inicio:  @Model.Proyecto.FechaDeInicio</li>
+                <li> Fecha Fin Estimada: @Model.Proyecto.FechaDeFinalizacionEstimada</li>
+                <li> Fecha FIn Real: @Model.Proyecto.FechaDeFinalizacionReal</li>
+            </ul>
+        </div>
+        <div id="containerInfoCliente" class=" col-12 ocultar">
+            <h4>Información del Cliente: </h4>
+            <ul>
+                <li> Apellido y Nombre: @Model.Proyecto.Cliente.Apellido, @Model.Proyecto.Cliente.Nombre </li>
+                <li> Mail: @Model.Proyecto.Cliente.Mail </li>
+                <li> Empresa: @Model.Proyecto.Cliente.Empresa </li>
+                <li> País:  @Model.Proyecto.Cliente.Pais </li>
+                <li> Telefono: @Model.Proyecto.Cliente.Telefono </li>
+            </ul>
+        </div>
+        <html>
+        <head>
+            <script type="text/javascript">
+                google.charts.load('current', { 'packages': ['gantt'] });
+                google.charts.load('current', { 'packages': ['corechart'] });
+
+                google.charts.setOnLoadCallback(drawChart1);
+                function drawChart1() {                    
+                    var numeros = [@foreach (var num in Model.Numeros){<text>'@num', </text>}];
+                    var descripciones = [@foreach (var desc in Model.Descripciones){<text>'@desc', </text>}];
+                    var duraciones = [@Html.Raw(string.Join(",", Model.Duraciones))];
+                    var porcentajes = [@string.Join(",", Model.Porcentajes.Select(i => i.ToString()))];
+
+                    var DiasInicio = [@string.Join(",", Model.DiasInicio.Select(i => i.ToString()))];
+                    var MesesInicio = [@string.Join(",", Model.MesesInicio.Select(i => i.ToString()))];
+                    var AnosInicio = [@string.Join(",", Model.AnosInicio.Select(i => i.ToString()))];
+
+                    var DiasFin = [@string.Join(",", Model.DiasFin.Select(i => i.ToString()))];
+                    var MesesFin = [@string.Join(",", Model.MesesFin.Select(i => i.ToString()))];
+                    var AnosFin = [@string.Join(",", Model.AnosFin.Select(i => i.ToString()))];
+
+
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Task ID');
+                    data.addColumn('string', 'Task Name');
+                    data.addColumn('string', 'Resource');
+                    data.addColumn('date', 'Start Date');
+                    data.addColumn('date', 'End Date');
+                    data.addColumn('number', 'Duration');
+                    data.addColumn('number', 'Percent Complete');
+                    data.addColumn('string', 'Dependencies');
+
+                    for (var i = 0; i < numeros.length; i++) {
+                        data.addRows([
+                            [numeros[i], descripciones[i], 'Ninguno', new Date(AnosInicio[i], MesesInicio[i], DiasInicio[i]),
+                            new Date(AnosFin[i], MesesFin[i], DiasFin[i]), duraciones[i], porcentajes[i], null]
+                        ]);
+                    }
+
+                    var options = {
+                        height: 400,
+                        gantt: {
+                            trackHeight: 30
+                        }
+                    };
+                    var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+
+                google.charts.setOnLoadCallback(drawChart2);
+                function drawChart2() {
+                    var totales = [@foreach (var num in Model.Totales){<text>'@num', </text>}];
+
+                    var totalesNumeros = totales.map(function (valor) {
+                        return parseInt(valor, 10); 
+                    });
+                    
+                    var data = google.visualization.arrayToDataTable([
+                        ['Tarea', 'Progreso'],
+                        ['Terminadas', totalesNumeros[0]],
+                        ['Incompletas',totalesNumeros[1]],
+                        ['Sin iniciar', totalesNumeros[2]]
+                    ]);
+                    var options = {
+                        title: 'Porcentaje de progreso de tareas'
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                    chart.draw(data, options);
+                }
+            </script>
+        </head>
+        <body>
+            <div id="chart_div"></div>
+            <hr />
+            <div class="col-12 mt-2">
+                <h4>Tareas más próximas a vencerse</h4>
+            </div>
+            <div class="row d-flex justify-content-center ">
+                <div class="col-5 mb-3">
+                    <ul class="list-group">
+                        @foreach (var tarea in Model.Proyecto.Tareas
+                       .Where(t => t.Estado.Equals(EstadoTarea.Incompleta) || t.Estado.Equals(EstadoTarea.Sin_Iniciar))
+                       .OrderBy(t => t.FechaFinalEstimada))
+                        {
+                            <li class="list-group-item list-group-item-info">
+                                @tarea.Descripcion @tarea.FechaFinalEstimada.Date.ToString().Split(' ')[0]
+                             </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-6" >
+                    <div id="piechart" style="width: 100%; height: 50vh;"></div>
+                </div>
+            </div>
+            <hr />
+            <h4 class="text-center">Tareas prioritarias activas</h4>
+            <div class="row d-flex justify-content-center p-2">
+                @for (int i = 0; i < Model.TareasPrioritarias.Count(); i++)
+                {
+                    <div class="col-4">
+                        <div class="card me-3 text-center">
+                            <img class="card-img-top" style="height:140px;" src="https://media.istockphoto.com/id/1369691475/photo/cardboard-texture.jpg?s=612x612&w=0&k=20&c=7LSNSeUNEPVeofm4OZj9oZqLb9PevOZcWsV_TdhbH5s=" alt="Card image">
+                            <div class="card-img-overlay">
+                                <h2 class="bold card-title">@Model.TareasPrioritarias[i].Descripcion</h2>
+                                <h5 class="bold card-title">Tiempo hasta: @Model.TareasPrioritarias[i].FechaFinalEstimada.Date.ToString().Split(' ')[0]</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row d-flex justify-content-center mt-3 mb-3">
+                <div class="col-4 mb-3">
+                    <button type="button" class="btnImprimir" onclick="imprimirInforme()"><i class="fas fa-print"></i> Imprimir Informe</button>
+                </div>
+            </div>
+        </body>
+        </html>
+    }
+    else
+    {
+        <h1 class="text-center bold text-danger">No hay ninguna tarea asocaida al proyecto</h1>
+    }
+}
+else{
+    <h1 class="text-center bold text-danger">No posee ningún proyecto activo</h1>
+}
+<script src="~/js/timeLine.js"></script>

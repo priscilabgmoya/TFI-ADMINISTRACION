@@ -1,0 +1,87 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.containerPpal {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #f1f5f6 !important;
+}
+
+.containerNavBar {
+    position:fixed; 
+    z-index:99; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #0097b6 !important;
+    text-align: center;
+}
+
+.iconNavBar {
+    font-size: 30px;
+    color: white;
+}
+
+.text-nav {
+    font-size: 12px;
+    color: white;
+}
+
+.ocultarNavBar {
+    display: none;
+}
+
+.iconLogOut {
+    font-size: 20px;
+    color: white;
+}
+
+.btnLogOut {
+    background-color: transparent;
+    border: none;
+}
+
+.containerImg img {
+    width: 80px;
+    height: 100px;
+    object-fit: contain;
+}
+.containerImgDenagado img {
+    height: 84vh;
+    object-fit: contain;
+}
+.containerTitulo {
+    margin-top: 10px;
+}
+
+.btnVolverVentana {
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 40px;
+}
+.containerPpal {
+    padding-right: 0px !important;
+    padding-left: 10px !important;
+    margin-right: 0px !important;
+    margin-left: 144px !important;
+}

@@ -1,0 +1,344 @@
+﻿@page
+@model Vista.Pages.LiderDeProyecto.CalendarioModel
+@{
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/asignarTarea.css" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+		  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+	<div class="row containerTitulo">
+		<div class="col-10 ">
+			<h1 class=" text-bold text-center">Calendario de tareas activas</h1>
+		</div>
+		<div class="col-2 ">
+			<a class="btn btnCerrarVentana" href="/LiderDeProyecto/AsignarTareas"><i class="fas fa-times"></i></a>
+		</div>
+	</div>
+	 
+	<div class="container d-flex justify-content-center align-items-md-center">
+		<div class="calendar-container">
+			<header class="calendar-header">
+				<p class="calendar-current-date"></p>
+				<div class="calendar-navigation">
+					<span id="calendar-prev"
+						  class="material-symbols-rounded">
+						chevron_left
+					</span>
+					<span id="calendar-next"
+						  class="material-symbols-rounded">
+						chevron_right
+					</span>
+				
+	</div>
+		</header>
+
+		<div class="calendar-body">
+			<ul class="calendar-weekdays">
+				<li>Lun</li>
+				<li>Mar</li>
+				<li>Mie</li>
+				<li>Jue</li>
+				<li>Vie</li>
+				<li>Sab</li>
+				<li>Dom</li>
+			</ul>
+			<ul class="calendar-dates"></ul>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
+
+<style>
+	
+
+	.calendar-container {
+		background: #fff;
+		width: 70%;
+		height: 81vh;
+		border-radius: 10px;
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+	}
+
+	.calendar-container header {
+			display: flex;
+			align-items: center;
+			padding: 25px 30px 10px;
+			justify-content: space-between;
+		}
+
+	header .calendar-navigation {
+		display: flex;
+	}
+
+		header .calendar-navigation span {
+			height: 38px;
+			width: 38px;
+			margin: 0 1px;
+			cursor: pointer;
+			text-align: center;
+			line-height: 38px;
+			border-radius: 50%;
+			user-select: none;
+			color: #aeabab;
+			font-size: 1.9rem;
+		}
+
+	.calendar-navigation span:last-child {
+		margin-right: -10px;
+	}
+
+	header .calendar-navigation span:hover {
+		background: #f2f2f2;
+	}
+
+	header .calendar-current-date {
+		font-weight: 500;
+		font-size: 2.5rem;
+	}
+
+	.calendar-body {
+		padding: 20px;
+	}
+
+		.calendar-body ul {
+			list-style: none;
+			flex-wrap: wrap;
+			display: flex;
+			text-align: center;
+		}
+
+		.calendar-body .calendar-dates {
+			margin-bottom: 20px;
+		}
+
+		.calendar-body li {
+			width: calc(100% / 7);
+			font-size: 1rem;
+			color: #414141;
+		}
+
+		.calendar-body .calendar-weekdays li {
+			cursor: default;
+			font-weight: 500;
+		}
+
+		.calendar-body .calendar-dates li {
+			margin-top: 30px;
+			position: relative;
+			z-index: 1;
+			cursor: pointer;
+		}
+
+	.calendar-dates li.inactive {
+		color: #aaa;
+	}
+
+	.calendar-dates li.active {
+		color: #fff;
+	}
+
+	.calendar-dates li::before {
+		position: absolute;
+		content: "";
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.calendar-dates li.active::before {
+		background: #6332c5;
+	}
+
+	.calendar-dates li:not(.active):hover::before {
+		background: #e4e1e1;
+	}
+
+	.important-date {
+		background-color: red;
+		border-radius: 10%;
+	}
+</style>
+
+<script>
+	let date = new Date();
+	let year = date.getFullYear();
+	let month = date.getMonth();
+
+	const day = document.querySelector(".calendar-dates");
+
+	const currdate = document
+		.querySelector(".calendar-current-date");
+
+	const prenexIcons = document
+		.querySelectorAll(".calendar-navigation span");
+
+	const months = [
+		"Enero",
+		"Febrero",
+		"Marzo",
+		"Abril",
+		"Mayo",
+		"Junio",
+		"Julio",
+		"Augosto",
+		"Septiembre",
+		"Octubre",
+		"Noviembre",
+		"Diciembre"
+	];
+
+	const logicaFechas = () => {
+	var dias = [@foreach (var num in Model.DiasFin)	{<text>'@num', </text>}];
+	var meses = [@foreach (var num in Model.MesesFin)	{<text>'@num', </text>}];
+	var anos = [@foreach (var num in Model.AnosFin)	{<text>'@num', </text>}];
+
+	const elementos = document.querySelectorAll('.calendar-dates li.inactive');
+	let cantidadElementos = 0;
+	elementos.forEach(elemento => {
+		const valorHTML = parseInt(elemento.innerHTML, 10);
+
+		if (!isNaN(valorHTML) && valorHTML > 25) {
+			cantidadElementos++;
+		}
+	});
+
+
+	var listaDeInts = dias.map(str => parseInt(str, 10));
+	var diasModificados = listaDeInts.map(dia => dia + cantidadElementos);
+	var listaDeStrings = listaDeInts.map(int => int.toString());
+
+	for(let i=0; i < dias.length; i++){
+		marcarFechasImportantes([
+			[listaDeStrings[i], meses[i], anos[i]]
+		]);
+	}
+	}
+
+
+	const manipulate = () => {
+		let dayone = new Date(year, month, 1).getDay();
+		let lastdate = new Date(year, month + 1, 0).getDate();
+		let dayend = new Date(year, month, lastdate).getDay();
+		let monthlastdate = new Date(year, month, 0).getDate();
+		let lit = "";
+
+		for (let i = dayone; i > 0; i--) {
+			lit += `<li class="inactive">${monthlastdate - i + 1}</li>`;
+		}
+
+		for (let i = 1; i <= lastdate; i++) {
+			let isToday = i === date.getDate()
+				&& month === new Date().getMonth()
+				&& year === new Date().getFullYear()
+				? "active"
+				: "";
+			lit += `<li class="${isToday}">${i}</li>`;
+		}
+
+		for (let i = dayend; i < 6; i++) {
+			lit += `<li class="inactive">${i - dayend + 1}</li>`
+		}
+		currdate.innerText = `${months[month]} ${year}`;
+		day.innerHTML = lit;
+
+		const fechasImportantes = [
+			[2, 8, 2023]
+		];
+		for (let i = 1; i <= lastdate; i++) {
+			let isToday = i === date.getDate()
+				&& month === new Date().getMonth()
+				&& year === new Date().getFullYear()
+				? "active"
+				: "";
+
+			let isImportante = fechasImportantes.some(fecha => fecha[0] === i && fecha[1] === month + 1 && fecha[2] === year) ? "important-date" : "";
+			lit += `<li class="${isToday} ${isImportante}">${i}</li>`;
+		}
+		marcarFechasImportantes(fechasImportantes);
+		logicaFechas();
+	}
+
+	const marcarFechasImportantes = (fechasImportantes) => {
+		fechasImportantes.forEach(fecha => {
+			const elementosFecha = document.querySelectorAll(`.calendar-dates li:nth-child(${fecha[0]})`);
+			let mesSeleccionado = months[month];
+			let numeroMes;
+			switch (mesSeleccionado) {
+				case "Enero":
+					numeroMes = 1;
+					break;
+				case "Febrero":
+					numeroMes = 2;
+					break;
+				case "Marzo":
+					numeroMes = 3;
+					break;
+				case "Abril":
+					numeroMes = 4;
+					break;
+				case "Mayo":
+					numeroMes = 5;
+					break;
+				case "Junio":
+					numeroMes = 6;
+					break;
+				case "Julio":
+					numeroMes = 7;
+					break;
+				case "Agosto":
+					numeroMes = 8;
+					break;
+				case "Septiembre":
+					numeroMes = 9;
+					break;
+				case "Octubre":
+					numeroMes = 10;
+					break;
+				case "Noviembre":
+					numeroMes = 11;
+					break;
+				case "Diciembre":
+					numeroMes = 12;
+					break;
+				default:
+					numeroMes = 0; // Valor por defecto si no coincide con ningún mes.
+					break;
+			}
+			if (fecha[1] == numeroMes && fecha[2] == year) {
+				elementosFecha.forEach(elemento => {
+					elemento.classList.add('important-date');
+				});
+			}			
+		});
+	}
+
+	manipulate();
+	prenexIcons.forEach(icon => {
+		icon.addEventListener("click", () => {
+			month = icon.id === "calendar-prev" ? month - 1 : month + 1;
+
+			if (month < 0 || month > 11) {
+				date = new Date(year, month, new Date().getDate());
+				year = date.getFullYear();
+				month = date.getMonth();
+			} else {
+				date = new Date();
+			}
+			manipulate();
+		});
+	});
+</script>
